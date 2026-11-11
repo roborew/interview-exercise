@@ -1,0 +1,35 @@
+:root {
+  font-family: system-ui, sans-serif;
+  color: #202124;
+  background: #f5f6f8;
+}
+body {
+  margin: 0;
+}
+main {
+  max-width: 720px;
+  margin: 48px auto;
+  padding: 32px;
+  background: white;
+  border-radius: 12px;
+}
+ul {
+  list-style: none;
+  padding: 0;
+}
+.project-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px 0;
+  border-bottom: 1px solid #e3e5e8;
+}
+.project-row span {
+  display: block;
+  color: #6b7280;
+  margin-top: 4px;
+}
+select {
+  min-width: 120px;
+  padding: 6px;
+}
