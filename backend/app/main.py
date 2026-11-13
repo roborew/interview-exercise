@@ -1,9 +1,8 @@
 from typing import Literal
 
-from fastapi import FastAPI
+from fastapi import FastAPI, HTTPException
 from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel
-
 
 Status = Literal["planned", "active", "complete"]
 
@@ -44,7 +43,7 @@ def update_project(project_id: int, update: StatusUpdate) -> Project:
     project = next((item for item in PROJECTS if item.id == project_id), None)
 
     if project is None:
-        return Project(id=project_id, name="Unknown project", owner="", status=update.status)
+        raise HTTPException(status_code=404, detail="Project not found")
 
     project.status = update.status
     return project
